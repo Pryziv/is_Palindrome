@@ -23,7 +23,7 @@ e.g. step 1. Run program (for windows UPalindrome.exe)
 Time complexity: the checkPattern function is the algorithm that iterates over the string searching for the patterns |aa|, and |aba| this requires checking the value in front (next) the value after
 an extra check on the value before is necessary with threads to prevent duplication of sequences/palindromes. This means that under a brute force approach it takes a minimum 3 comparisons of values per character to check for
 being a palindrome O(3n). To reduce this time complexity UPalindrome generates a thread_pool that will run the char comparisons in parallel. This reduces the time complexity to O(3n/T) where T is  the number of threads
-the computer can run based upon |std::thread::hardware_concurrency()|. The time complexity of gathering the extent of a palindrome is n/2 - p where p is the length of the starting pattern, this can be approximated to worst case
+the computer can run based upon |std:: thread ::hardware_concurrency()|. The time complexity of gathering the extent of a palindrome is n/2 - p where p is the length of the starting pattern, this can be approximated to worst case
 n/2 being the worst case for the entire provided string being 1 palindrome, and best case O(1) where the provided starting pattern is the extent of the pattern.
 
 In summary the worst case being a single threading system and the entire string is 1 palindrome O(3n + n/2) -> O(3.5n)
